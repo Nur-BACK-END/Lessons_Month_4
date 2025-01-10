@@ -1,10 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-
-def text_response(request):
-    return HttpResponse("Это текстовый ответ от Django!")
-
-def html_response(request):
-    return render(request, 'main.html', {'title': 'HTML Страница'})
+from django.shortcuts import render,HttpResponse
+from posts.models import Post
 
 
+
+def main_view(request):
+    return render(request, "base.html")
+
+def list_view(request):
+    posts = Post.objects.all()
+    return render(request,"posts_list.html",context={"posts": posts})
