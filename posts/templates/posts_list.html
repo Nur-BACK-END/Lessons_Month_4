@@ -3,10 +3,19 @@
 {% block content %}
 {%for post in posts %}
 <div class="card" style="width: 18rem; margin: 14px">
-  <img src="..." class="card-img-top" alt="...">
+  {% if post.image%}
+  <img src="{{post.image.url}}" class="card-img-top" alt="">
+  {% else %}
+  <img str="static/images.png"class="card-img-top" alt="...">
+  {% endif %}
   <div class="card-body">
     <h5 class="card-title"> {{post.title}}</h5>
     <p> {{post.description}}</p>
+    <p class="card-text">{{post.category}}<p>
+    {% for tag in post.tag.all %}
+    <a href="#" class="bth bth-secondary"> {{tag.title}}</a>
+    {% endfor %}
+    
     <a href="#" class="btn btn-primary"> Learn more</a>
   </div>
 </div>

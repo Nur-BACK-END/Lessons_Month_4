@@ -1,0 +1,22 @@
+
+{% extends 'components/navbar.html' %}
+{% block content %}
+
+<h1>Детальный просмотр</h1>
+
+<h1>Название: {{ post.title }}</h1>
+    {% if post.image %}
+    <img src="{{post.image.ucl}}" alt="image" style="">
+    {% endif %}
+
+    <h2>Описание: {{ post.content }}</h2>
+    <h2>Цена: {{ post.rate }}</h2>
+    <h2>Дата Создания: {{ post.created_at }}</h2>
+    <h2>Категория: {{post.category}}</h2>
+
+    {% for teg in post.teg.all %}
+    <a href="#" class="bth bth-secondary">{{tag.title}}</a>
+    {% endfor %}
+
+
+{% endblock %}
