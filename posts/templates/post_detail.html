@@ -1,12 +1,12 @@
 
-{% extends 'components/navbar.html' %}
+{% extends 'navbar.html' %}
 {% block content %}
 
 <h1>Детальный просмотр</h1>
 
 <h1>Название: {{ post.title }}</h1>
     {% if post.image %}
-    <img src="{{post.image.ucl}}" alt="image" style="">
+    <img src="{{post.image.url}}" alt="image" style="">
     {% endif %}
 
     <h2>Описание: {{ post.content }}</h2>
