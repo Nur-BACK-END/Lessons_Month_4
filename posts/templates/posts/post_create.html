@@ -1,0 +1,19 @@
+{% extends 'Navbar.html'%}
+{% block content%}
+
+<form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.as_p}}
+   <!-- </p>
+   <label for="title"> Введите Заголовок: </label>
+   <p>
+   <input type = "text" name="title">
+   </p>
+   <label for="description">Введите описание:</label>
+   <p>
+   <input type = "text" name="description">
+   </p>  -->
+    <button type="submit"> Опубликовать </button>
+</form>
+
+{% endblock %}
